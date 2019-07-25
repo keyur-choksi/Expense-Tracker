@@ -1,0 +1,179 @@
+<html>
+    
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link type="text/css" href="assets/style.css" rel="stylesheet"/>
+        <link type="text/css" href="assets/bootstrap.css" rel="stylesheet"/>
+        
+        <script type="text/javascript" src="assets/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/popper.min.js"></script>
+        <script type="text/javascript" src="assets/bootstrap.min.js"></script>
+        <script>
+           
+           $('document').ready(function(e){
+                $('.log').click(function(){$('#loginBox').slideToggle("slow");});
+                $('.reg').click(function(){$('#regBox').slideToggle("slow");}); 
+                
+           
+                $('#confirm_password').keyup(function(e){
+                    if($('#password').val() !== $('#confirm_password').val()) {
+                        $('#error').html("Password Doesn't Matched");
+                        $('input[type="submit"]').attr('disabled','disabled');
+                        
+                    }else{
+                        $('#error').html("");
+                        $('input[type="submit"]').removeAttr('disabled');
+                    }
+                });
+                     
+            
+            });
+           
+        </script>
+        
+       
+        <title>Expense Tracker</title>
+    </head>
+<body>
+        <div class='container-fluid m-0 p-0'>
+            
+            <div class="row p-2" style="background: #000;">
+                <div class="col-lg-6 text-light">
+                    <h2><font face="comic sans ms">Expense Tracker</font></h2>
+                </div>
+                <div class="col-lg-6 text-light text-right">
+                    <font face="calibari">Piyushbhanderi525@gmail.com</font>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class='main row'>
+                <div class='inner_main'>
+                    <div class='col-lg-12'>
+                        <h1 class='text-light text-center mt-4 lead'><font style="font-size: 60px ;">Welcome to Expense Tracker</font></h1><br>
+                        <p class='text-light text-justify p-5 m-5' style="font-size:18px;">&emsp; It is absolutely free website for all the users. A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.A paragraph is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='row' style="position:relative;" >
+                
+                <div class='col-lg-12 p-5' style="background-image: url('assets/199b787141329d0f2921_NHZCq.jpg'); height:500px; background-position: center;">
+                        
+                    <h1 align='center' class='mt-5 mb-5'><button class="log btn btn-lg btn-light" style="width:20%;">Login</button>
+                        <button class="reg btn btn-lg btn-warning" style="width:20%;">Register</button>
+                    </h1>
+
+                </div>
+                
+                <div id="loginBox" class="pb-0">
+                    <h6 align='right' class='log'>X&nbsp;</h6>
+                    <h2 align="center">Login</h2><hr><br>
+
+                    <form  method="POST" action="LoginServlet" class="mb-0">
+
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+                              </div>
+                            </div><br>
+                            <div class="form-group row">
+
+                              <div class="col-sm-12">
+                                <input type="password" class="form-control" placeholder="Enter Password" name="pass" required>
+                              </div>
+                            </div><br>
+
+
+                            <input type="submit" class="form-control btn btn-lg btn-primary rounded-0 mb-0" name="submit" value="Login" />
+
+
+                    </form>
+                </div>
+                
+                <div id="regBox" class="pb-0">
+                    <h6 align='right' class='reg'>X&nbsp;</h6>
+                    <h2 align="center">Register</h2><hr><br>
+
+                    <form  method="POST" class="registerForm mb-0" action="RegisterServlet">
+                            
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+                              </div>
+                            </div><br>
+                            
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" placeholder="Enter Mobile" name="mobile" required>
+                              </div>
+                            </div><br>
+                            
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="text" class="form-control" placeholder="Enter City" name="city" required>
+                              </div>
+                            </div><br>
+                            
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="date" name="dob" required/>
+                              </div>
+                            </div><br>
+                            
+                            <div class="form-group row">                      
+
+                              <div class="col-sm-12">
+                                  <input type="email" class="form-control" id="staticEmail" placeholder="Enter Email" name="email" required>
+                              </div>
+                            </div><br>
+                            <div class="form-group row">
+
+                              <div class="col-sm-12">
+                                  <input type="password" class="form-control" id="password" placeholder="Enter Password" name="pass" required>
+                              </div>
+                            </div><br>
+                            
+                            <div class="col-sm-12">
+                                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" name="repass" required>
+                                <font color="red" id="error" ></font>
+                              </div>
+                            <br>
+
+                            <input type="submit" class="form-control btn btn-lg btn-primary rounded-0 mb-0" name="submit" value="Register" />
+
+
+                    </form>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4">
+                    
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            
+            <div class='row text-center' style="background:#000;">
+                <div class="col-lg-12 p-1">
+                    <span class="text-light">Copyright &copy; 2019 Expense Tracker. All Rights Reserved</span>
+                </div>
+                
+            </div>
+                
+        </div>
+    
+        
+        
+</body>
+
+
+</html>

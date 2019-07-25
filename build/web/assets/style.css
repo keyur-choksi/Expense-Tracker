@@ -1,0 +1,57 @@
+body{
+    margin:0px;
+    position:relative;
+}
+a{display: block;}
+.row{
+    margin:0 !important;
+}
+
+.main{
+    background: url('1.jpg');
+    background-size:cover !important;
+    background-attachment: fixed;
+}
+
+.inner_main{
+    background: rgba(0,0,0,0.6);
+}
+
+#loginBox,#regBox
+{
+    width:35%;     
+    -border:2px solid #333;
+    background-color: #fff;
+    display: none;
+    box-shadow: 20px 10px 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:999;
+}
+
+
+#menu{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    z-index:999;
+    background: #ccc;
+}
+
+
+ul li:hover{
+    background: #000;
+    transition: 0.5s;
+    z-index:999;
+}
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+}
